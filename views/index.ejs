@@ -1,1 +1,14 @@
-<h1>INDEX PAGES!!!</h1>
+<% include ./partials/header %>
+<h1>INDEX PAGE!!!!</h1>
+<div class="ui container">
+
+    <% blogs.forEach(function(blog){%>
+        <h2><%= blog.title%></h2>
+        <img src="<%= blog.image %>" alt="blog image">
+        <span><%= blog.created %></span>
+        <p maxlength="20"><%= blog.body.substring(0,200) %>...</p>
+        <a href="/blogs/<%= blog._id %>">Read More</a>
+    <% }) %>
+
+</div>
+<% include ./partials/footer %>
